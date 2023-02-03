@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Finger+Paint&display=swap');
+*{
+    font-family: 'Finger Paint', cursive;
+}
+body{
+    background-image: url(../img/Textura_background1.jpg);
+}
+
+.cssContainerHome{
+    margin-top: 5em;
+    height: 65vh;
+    /* font-family: 'Finger Paint', cursive; */
+    /* font-family: 'DynaPuff', cursive; */
+}
+
+.cssHomeTitle{
+    font-size: 7em;
+}
