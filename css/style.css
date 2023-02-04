@@ -8,6 +8,8 @@ body{
     background-image: url(../img/Textura_background1.jpg);
     background-size: contain;
 }
+
+
 .cssContainerHome{
     margin-top: 5em;
     height: 65vh;
@@ -20,8 +22,22 @@ body{
 }
 .containerPlayerResponsive{
     width: 70vw !important;
-    margin-top: 8em;
+    margin-top: 2em;
 }
+.sizeBox{
+    width: 5em;
+    height: 5em;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border: solid 5px white;
+    border-radius: 1em;
+    box-shadow: inset 5px 5px 2px black;
+}
+
+
+
+
 @media (max-width:768px){
     .cssHomeTitle{
         font-size: 6em;
