@@ -2,18 +2,43 @@
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Finger+Paint&display=swap');
 *{
     font-family: 'Finger Paint', cursive;
+    /* font-family: 'DynaPuff', cursive; */
 }
 body{
     background-image: url(../img/Textura_background1.jpg);
+    background-size: contain;
 }
-
 .cssContainerHome{
     margin-top: 5em;
     height: 65vh;
-    /* font-family: 'Finger Paint', cursive; */
-    /* font-family: 'DynaPuff', cursive; */
 }
-
+.containerPlayerSelect{
+    height: 10vh;
+}
 .cssHomeTitle{
     font-size: 7em;
+}
+.containerPlayerResponsive{
+    width: 70vw !important;
+    margin-top: 8em;
+}
+@media (max-width:768px){
+    .cssHomeTitle{
+        font-size: 6em;
+    }
+}
+@media (max-width:500px){
+    .cssHomeTitle{
+        font-size: 4em;
+    }
+}
+@media (min-width:500px){
+    .containerPlayerResponsive{
+        width: 50vw !important;
+    }
+}
+@media (min-width:768px){
+    .containerPlayerResponsive{
+        width: 30vw !important;
+    }
 }
