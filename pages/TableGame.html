@@ -14,6 +14,9 @@
 
 </head>
 <body>
+
+    <!-- Cabecera logo TIC TAC TOE -->
+
     <header  class="container w-75 container1PlayerSelect mt-3">
         <div class="row">
             <div class="col-6 text-primary text-end fs-1">
@@ -27,14 +30,20 @@
             </div>
         </div>
     </header>
-    <div class="container containerPlayerResponsive">
+
+    <!-- Tablero de juego -->
+
+    <div class="containerResponsive mx-auto">
         <div class="row mt-3 text-center">
             <div class="col text-light">
                 nº movimientos : n
             </div>
         </div>
-        <div class="row mt-2">
-            <div class="col-12 d-flex justify-content-center text-primary">
+        <div class="row mt-2 d-flex flex-column"> 
+            <div class="col text-primary d-flex">
+
+                <!-- Indicación de turno del player 1 -->
+
                 <div class="col text-center">       
                     Player 1
                 </div>
@@ -42,26 +51,34 @@
                     <input type="text" class="form-control p-0 text-center bg-primary" placeholder="Es tu turno" aria-label="TurnoPlayer1" aria-describedby="basic-addon1">
                 </div>
             </div>
+                <!-- Tabla de celdas de juego -->
+
             <div class="row mx-auto my-2">
-                <div class="col-4 sizeBox">celda1</div>
-                <div class="col-4 sizeBox">celda2</div>
-                <div class="col-4 sizeBox">celda3</div>
-                <div class="col-4 sizeBox">celda4</div>
-                <div class="col-4 sizeBox">celda5</div>
-                <div class="col-4 sizeBox">celda6</div>
-                <div class="col-4 sizeBox">celda7</div>
-                <div class="col-4 sizeBox">celda8</div>
-                <div class="col-4 sizeBox">celda9</div>
+                    <div class="col-4 sizeBox">celda1</div>
+                    <div class="col-4 sizeBox">celda2</div>
+                    <div class="col-4 sizeBox">celda3</div>
+                    <div class="col-4 sizeBox">celda4</div>
+                    <div class="col-4 sizeBox">celda5</div>
+                    <div class="col-4 sizeBox">celda6</div>
+                    <div class="col-4 sizeBox">celda7</div>
+                    <div class="col-4 sizeBox">celda8</div>
+                    <div class="col-4 sizeBox">celda9</div>
             </div>
-            <div class="col-12 d-flex justify-content-center text-danger">
-                <div class="col text-center">       
-                    Player 2
-                </div>
-                <div class="col text-center">
-                    <input type="text" class="form-control p-0 text-center bg-danger" placeholder="Es tu turno" aria-label="TurnoPlayer2" aria-describedby="basic-addon1">
-                </div>
+
+                <!-- Indicación de turno del player 2 -->
+
+            <div class="col d-flex text-danger">
+                    <div class="col text-center">       
+                        Player 2
+                    </div>
+                    <div class="col text-center">
+                        <input type="text" class="form-control p-0 text-center bg-danger" placeholder="Es tu turno" aria-label="TurnoPlayer2" aria-describedby="basic-addon1">
+                    </div>
             </div>
         </div>
+
+        <!-- Botones inferiores reset y home -->
+
         <div class="row mt-5">
             <div class="col-6">
                 <div class="col d-flex justify-content-center align-items-center">

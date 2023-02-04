@@ -14,14 +14,15 @@ body{
     margin-top: 5em;
     height: 65vh;
 }
-.containerPlayerSelect{
+
+.PlayerSelect{
     height: 10vh;
 }
 .cssHomeTitle{
     font-size: 7em;
 }
-.containerPlayerResponsive{
-    width: 70vw !important;
+.containerResponsive{
+    width: 70vw;
     margin-top: 2em;
 }
 .sizeBox{
@@ -36,8 +37,6 @@ body{
 }
 
 
-
-
 @media (max-width:768px){
     .cssHomeTitle{
         font-size: 6em;
@@ -49,12 +48,17 @@ body{
     }
 }
 @media (min-width:500px){
-    .containerPlayerResponsive{
-        width: 50vw !important;
+    .containerResponsive{
+        width: 50vw;
     }
 }
 @media (min-width:768px){
-    .containerPlayerResponsive{
-        width: 30vw !important;
+    .containerResponsive{
+        width: 30vw;
+    }
+}
+@media (min-width:1300px){
+    .containerResponsive{
+        width: 20vw;
     }
 }
