@@ -33,46 +33,47 @@
 
     <!-- Tablero de juego -->
 
-    <div class="containerResponsive mx-auto">
+    <div class="containerTableGame mx-auto">
         <div class="row mt-3 text-center">
             <div class="col text-light">
                 nº movimientos : n
             </div>
         </div>
-        <div class="row mt-2 d-flex flex-column"> 
-            <div class="col text-primary d-flex">
+        <div class="row mt-2 w-auto"> 
 
                 <!-- Indicación de turno del player 1 -->
 
-                <div class="col text-center">       
-                    Player 1
-                </div>
-                <div class="col text-center">
-                    <input type="text" class="form-control p-0 text-center bg-primary" placeholder="Es tu turno" aria-label="TurnoPlayer1" aria-describedby="basic-addon1">
-                </div>
+                <div class="col-12 col-lg-4 text-primary boxPlayer">
+                    <div class="text-center">       
+                        Player 1
+                    </div>
+                    <div class="">
+                        <input type="text" class="form-control p-0 text-center bg-primary w-50 mx-auto" placeholder="Es tu turno" aria-label="TurnoPlayer2" aria-describedby="basic-addon1">
+                    </div>
             </div>
-                <!-- Tabla de celdas de juego -->
 
-            <div class="row mx-auto my-2">
-                    <div class="col-4 sizeBox">celda1</div>
-                    <div class="col-4 sizeBox">celda2</div>
-                    <div class="col-4 sizeBox">celda3</div>
-                    <div class="col-4 sizeBox">celda4</div>
-                    <div class="col-4 sizeBox">celda5</div>
-                    <div class="col-4 sizeBox">celda6</div>
-                    <div class="col-4 sizeBox">celda7</div>
-                    <div class="col-4 sizeBox">celda8</div>
-                    <div class="col-4 sizeBox">celda9</div>
+            <!-- Tabla de celdas de juego -->
+
+            <div class="col-12 col-lg-4 boxTable my-2">
+                    <div class="sizeBox">celda1</div>
+                    <div class="sizeBox">celda2</div>
+                    <div class="sizeBox">celda3</div>
+                    <div class="sizeBox">celda4</div>
+                    <div class="sizeBox">celda5</div>
+                    <div class="sizeBox">celda6</div>
+                    <div class="sizeBox">celda7</div>
+                    <div class="sizeBox">celda8</div>
+                    <div class="sizeBox">celda9</div>
             </div>
 
                 <!-- Indicación de turno del player 2 -->
 
-            <div class="col d-flex text-danger">
-                    <div class="col text-center">       
+            <div class="col-12 col-lg-4 text-danger boxPlayer">
+                    <div class="text-center">       
                         Player 2
                     </div>
-                    <div class="col text-center">
-                        <input type="text" class="form-control p-0 text-center bg-danger" placeholder="Es tu turno" aria-label="TurnoPlayer2" aria-describedby="basic-addon1">
+                    <div class="">
+                        <input type="text" class="form-control p-0 text-center bg-danger w-50 mx-auto" placeholder="Es tu turno" aria-label="TurnoPlayer2" aria-describedby="basic-addon1">
                     </div>
             </div>
         </div>

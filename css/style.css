@@ -9,7 +9,9 @@ body{
     background-size: contain;
 }
 
-
+.transparent{
+    background: rgba(0,0,0,0.7); 
+}
 .cssContainerHome{
     margin-top: 5em;
     height: 65vh;
@@ -21,9 +23,18 @@ body{
 .cssHomeTitle{
     font-size: 7em;
 }
-.containerResponsive{
+.containerPlayerSelect{
     width: 70vw;
     margin-top: 2em;
+}
+.containerTableGame{
+    width: 70vw;
+}
+
+.boxTable{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
 }
 .sizeBox{
     width: 5em;
@@ -47,18 +58,38 @@ body{
         font-size: 4em;
     }
 }
+
 @media (min-width:500px){
-    .containerResponsive{
+    .containerPlayerSelect{
+        width: 50vw;
+    }
+    .containerTableGame{
         width: 50vw;
     }
 }
 @media (min-width:768px){
-    .containerResponsive{
+    .containerPlayerSelect{
+        width: 30vw;
+    }
+    .containerTableGame{
         width: 30vw;
     }
 }
+@media (min-width:992px){
+    .containerTableGame{
+        width: 80vw;
+    }
+    .boxPlayer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
 @media (min-width:1300px){
-    .containerResponsive{
+    .containerPlayerSelect{
         width: 20vw;
     }
+    .containerTableGame{
+        width: 60vw;
+}
 }
