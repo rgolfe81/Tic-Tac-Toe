@@ -34,9 +34,9 @@ body{
 .boxTable{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
+
 }
-.sizeBox{
+.sizeBoxes{
     width: 5em;
     height: 5em;
     justify-content: center;
@@ -45,6 +45,9 @@ body{
     border: solid 5px white;
     border-radius: 1em;
     box-shadow: inset 5px 5px 2px black;
+    color: white;
+    cursor: pointer;
+
 }
 
 
