@@ -29,32 +29,33 @@
     </header>
     <div class="containerPlayerSelect mx-auto mt-5">
         <div class="row transparent rounded">
-            <div class="col-12">
+            <div class="col-12 text-primary">
                 Player 1
             </div>
-            <div class="col-12 PlayerSelect">
-                <input type="text" class="form-control" placeholder="Username" aria-label="NamePlayer1" aria-describedby="basic-addon1">
+            <div class="col-12 PlayerSelect mt-1">
+                <input type="text" class="form-control namePlayer" name="player1" placeholder="Username" maxLength="15">
             </div>
         </div>
         <div class="row transparent rounded mt-2">
-            <div class="col-12">
+            <div class="col-12 text-danger">
                 Player 2
             </div>
-            <div class="col-12 PlayerSelect">
-                <input type="text" class="form-control" placeholder="Username" aria-label="NamePlayer2" aria-describedby="basic-addon1">
+            <div class="col-12 PlayerSelect mt-1">
+                <input type="text" class="form-control namePlayer" name="player2" placeholder="Username" maxLength="15">
             </div>
         </div>
         <div class="row d-flex justify-content-center align-items-center mt-5">
             <div class="col-12">
                 <div class="col d-flex justify-content-center align-items-center">
-                    <a class="btn btn-light" href="TableGame.html" role="button">Go!</a>
+                    <a class="btn btn-light" id="goToTableGame" onclick="ToTableGame()" role="button">Go!</a>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <script src="../js/main.js"></script>
+    <script src="../js/TableGame.js"></script>
+    <script src="../js/PlayerSelect.js"></script>
     
     <!-- Links bootstrap JS -->
 
