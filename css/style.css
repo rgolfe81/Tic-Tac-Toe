@@ -1,27 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Finger+Paint&display=swap');
 *{
     font-family: 'Finger Paint', cursive;
-    /* font-family: 'DynaPuff', cursive; */
+}
+:root{
+    font-size: 1em;
 }
 body{
     background-image: url(../img/Textura_background1.jpg);
     background-size: contain;
 }
-
 .transparent{
     background: rgba(0,0,0,0.7); 
 }
-.cssContainerHome{
-    margin-top: 5em;
-    height: 65vh;
+.ContainerHome{
+    margin-top: 1em;
+    height: 50vh;
 }
-
+.logoSize{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgSize{
+    width: 50%;
+    border-radius: 1em;
+    box-shadow: 0px 0px 5px 1px white;
+}
 .PlayerSelect{
     height: 10vh;
 }
-.cssHomeTitle{
-    font-size: 7em;
+.TitleHome{
+    font-size: 6em;
+}
+.sizeTitle{
+    font-size: 4em;
 }
 .containerPlayerSelect{
     width: 70vw;
@@ -30,35 +42,33 @@ body{
 .containerTableGame{
     width: 70vw;
 }
-
 .boxTable{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
+    gap: 2px;
+}
+.marginLg{
+    width: 50%;
 }
 .sizeBoxes{
-    width: 5em;
-    height: 5em;
+    height: 5rem;
+    font-size: 4rem;
     justify-content: center;
     align-items: center;
     display: flex;
     border: solid 5px white;
-    border-radius: 1em;
+    border-radius: 1rem;
     box-shadow: inset 5px 5px 2px black;
     color: white;
     cursor: pointer;
-
 }
 
-
-@media (max-width:768px){
-    .cssHomeTitle{
-        font-size: 6em;
-    }
-}
 @media (max-width:500px){
-    .cssHomeTitle{
-        font-size: 4em;
+    .TitleHome{
+        font-size: 3em;
+    }
+    .sizeTitle{
+        font-size: 3em;
     }
 }
 
@@ -69,6 +79,9 @@ body{
     .containerTableGame{
         width: 50vw;
     }
+    .imgSize{
+        width: 45%;
+    }
 }
 @media (min-width:768px){
     .containerPlayerSelect{
@@ -78,23 +91,30 @@ body{
     .containerTableGame{
         width: 30vw;
     }
+    .imgSize{
+        width: 35%;
+    }
 }
 @media (min-width:992px){
     .containerTableGame{
-        width: 80vw;
+        width: 90vw;
         margin-top: 4em;
     }
     .sizeBoxes{
-        width: 6em;
-        height: 6em;
+        height: 6rem;
+        font-size: 6rem;
     }
     .boxPlayer{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
     .sizeNamePlayer{
         font-size: 2em;
+    }
+    .imgSize{
+        width: 25%;
     }
 }
 @media (min-width:1300px){
@@ -102,7 +122,10 @@ body{
         width: 20vw;
     }
     .sizeBoxes{
-        width: 8em;
-        height: 8em;
+        height: 8rem;
+        font-size: 7rem;
+    }
+    .imgSize{
+        width: 15%;
     }
 }
