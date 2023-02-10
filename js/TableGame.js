@@ -35,6 +35,12 @@ const CheckWin = () => {
 player1.innerHTML = `${datosSesion.player1}`;
 player2.innerHTML = `${datosSesion.player2}`;
 
+let movesPlayer1 = document.getElementById("movesPlayer1");
+let movePlusP1 = numMovesP1;
+let movesPlayer2 = document.getElementById("movesPlayer2");
+let movePlusP2 = numMovesP2;
+    
+
 table.map (cell => {
     cell.addEventListener("click", () => {
         if ((cell.innerHTML === "") && (tokenP1>0 || tokenP2>0)){
@@ -42,18 +48,25 @@ table.map (cell => {
                 cell.innerHTML = "X";
                 tablePresent[cell.id] = "X";
                 tokenP1--;
-                numMovesTotal++;
                 numMovesP1++;
+
+                movesPlayer1 = document.getElementById("movesPlayer1");
+                movePlusP1 = numMovesP1;
+                movesPlayer1.innerHTML = movePlusP1;
             }
             else{
                 cell.innerHTML = "O";
                 tablePresent[cell.id] = "O";
                 tokenP2--;
-                numMovesTotal++;
-                numMovesP2;
+                numMovesP2++;
+
+                movesPlayer2 = document.getElementById("movesPlayer2");
+                movePlusP2 = numMovesP2;
+                movesPlayer2.innerHTML = movePlusP2;
             }
             CheckWin();
             turn = !turn;
         }
     })
 })
+
