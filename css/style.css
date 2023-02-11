@@ -16,6 +16,9 @@ body{
     margin-top: 1em;
     height: 50vh;
 }
+.a{
+background-color : rgb(104, 21, 21);   
+}
 .logoSize{
     display: flex;
     justify-content: center;
@@ -47,8 +50,12 @@ body{
     grid-template-columns: repeat(3, 1fr);
     gap: 2px;
 }
-.marginLg{
-    width: 50%;
+.ledTurn{
+    width: 60%;
+    border: solid 1px white;
+    border-radius: 0.5em;
+    height: 1.5em;
+    margin: 0 auto;
 }
 .sizeBoxes{
     height: 5rem;
