@@ -1,14 +1,4 @@
-let table = Array.from(document.getElementsByClassName('sizeBoxes'));
-
-let player1 = document.getElementById("player1");
-let player2 = document.getElementById("player2");
-
-let datosSesion = JSON.parse(sessionStorage.getItem("playersInfo"));
-
-let turn = true;
-
-let tokenP1 = 0;
-let tokenP2 = 0;
+// Entorno *****************************************************
 
 let tablePresent = ["","","","","","","","",""];
 
@@ -23,24 +13,54 @@ let tableWin = [
     [2, 4, 6],
 ];
 
+let tableView = Array.from(document.getElementsByClassName('sizeBoxes'));
+
+let player1 = document.getElementById("player1");
+let player2 = document.getElementById("player2");
+
 let movesPlayer1 = document.getElementById("movesPlayer1");
 let movesPlayer2 = document.getElementById("movesPlayer2");
 
 let textTurnP1Js = document.getElementById("textTurnP1Html");
 let textTurnP2Js = document.getElementById("textTurnP2Html");
-textTurnP1Js.innerHTML= "Es tu turno";
-textTurnP2Js.innerHTML= "";
 
+let datosSesion = JSON.parse(sessionStorage.getItem("playersInfo"));
+
+let turn = true;
+
+let tokenP1 = 0;
+let tokenP2 = 0;
+
+// Funciones ********************************************************
 
 const CheckWin = () => {
     console.log (tablePresent)
 }
 
+const Reset = () => {
+    textTurnP1Js.innerHTML= "Es tu turno";
+    textTurnP2Js.innerHTML= "";
+    movesPlayer1.innerHTML = 0;
+    movesPlayer2.innerHTML = 0;
+    tokenP1 = 0;
+    tokenP2 = 0;
+    tableView.map (cell => {
+        cell.innerHTML = "";
+        tablePresent[cell.id] = "";
+    })
+}
+
+// Algoritmo ********************************************************
+
 player1.innerHTML = `${datosSesion.player1}`;
 player2.innerHTML = `${datosSesion.player2}`;
+textTurnP1Js.innerHTML= "Es tu turno";
+textTurnP2Js.innerHTML= "";
+movesPlayer1.innerHTML = 0;
+movesPlayer2.innerHTML = 0;
 
 
-table.map (cell => {
+tableView.map (cell => {
     cell.addEventListener("click", () => {
         if ((cell.innerHTML === "") && (tokenP1<3 || tokenP2<3)){
             if(turn){
