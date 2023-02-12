@@ -31,10 +31,18 @@ let turn = true;
 let tokenP1 = 0;
 let tokenP2 = 0;
 
+let winner;
+
 // Funciones ********************************************************
 
 const CheckWin = () => {
-    console.log (tablePresent)
+    for (let i = 0; i < tableWin.length; i++) {
+        let [a, b, c] = tableWin[i];
+        if (tablePresent[a] === tablePresent[b] && tablePresent[b] === tablePresent[c]) {
+            return tablePresent[a];
+        }
+    }
+    return null;
 }
 
 const Reset = () => {
@@ -44,6 +52,7 @@ const Reset = () => {
     movesPlayer2.innerHTML = 0;
     tokenP1 = 0;
     tokenP2 = 0;
+    turn = true;
     tableView.map (cell => {
         cell.innerHTML = "";
         tablePresent[cell.id] = "";
@@ -59,7 +68,6 @@ textTurnP2Js.innerHTML= "";
 movesPlayer1.innerHTML = 0;
 movesPlayer2.innerHTML = 0;
 
-
 tableView.map (cell => {
     cell.addEventListener("click", () => {
         if ((cell.innerHTML === "") && (tokenP1<3 || tokenP2<3)){
@@ -74,14 +82,30 @@ tableView.map (cell => {
             }
             else{
                 cell.innerHTML = "O";
-                cell.style.color = "rgb(220, 53, 69)"
+                cell.style.color = "rgb(220, 53, 69)";
                 tablePresent[cell.id] = "O";
                 tokenP2++;
                 movesPlayer2.innerHTML = tokenP2;
                 textTurnP1Js.innerHTML= "Es tu turno";
                 textTurnP2Js.innerHTML= "";
             }
-            CheckWin();
+            winner = CheckWin();
+            if (winner === "X"){
+                sessionStorage.setItem("winnerSS", winner);
+                sessionStorage.setItem("winnerNameSS", player1.innerHTML);
+                sessionStorage.setItem("winnerMoveSS", movesPlayer1.innerHTML);
+                setTimeout(()=>{
+                    window.open("../pages/WinGame.html","_self");
+                    },500);
+            }
+            if (winner === "O"){
+                sessionStorage.setItem("winnerSS", winner);
+                sessionStorage.setItem("winnerNameSS", player2.innerHTML);
+                sessionStorage.setItem("winnerMoveSS", movesPlayer1.innerHTML);
+                setTimeout(()=>{
+                    window.open("../pages/WinGame.html","_self");
+                    },500);
+            }
             turn = !turn;
         }
     })
