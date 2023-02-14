@@ -32,7 +32,7 @@ let tokenP1 = 0;
 let tokenP2 = 0;
 
 let winner;
-let inDelete = true;
+let inDelete = 10;
 
 // Funciones ********************************************************
 
@@ -88,6 +88,7 @@ textTurnP1Js.innerHTML= "Es tu turno";
 textTurnP2Js.innerHTML= "";
 movesPlayer1.innerHTML = 0;
 movesPlayer2.innerHTML = 0;
+console.log ("el primer indelete es "+inDelete);
 
 
 tableView.map (cell => {
@@ -127,29 +128,54 @@ tableView.map (cell => {
         console.log ("movimientos p2 "+tokenP2);
         console.log ("turno "+turn);
         console.log ("celda "+cell.innerHTML);
-        if ((cell.textContent === "X") && (cell.textContent !== "") && (tokenP1>=3 && tokenP2>=3) && (turn) && (inDelete)){
+        if ((cell.innerHTML === "X") && (cell.innerHTML !== "") && (tokenP1>=3 && tokenP2>=3) && (turn) && (inDelete === 10)){
             cell.innerHTML = "";
             tablePresent[cell.id] = "";
-            inDelete = !inDelete;
+            inDelete = 5;
             console.log ("indelete dentro del borrado : "+inDelete);
+        } else {
+            if ((cell.innerHTML !== "O") && (cell.innerHTML !== "X") && (tokenP1>=3 && tokenP2>=3) && (turn) && (inDelete === 5) && (cell.innerHTML === "")){
+                cell.innerHTML = "X";
+                cell.style.color = "rgb(13, 110, 253)";
+                tablePresent[cell.id] = "X";
+                console.log ("Ha entrado en el if pintar X azul");
+                tokenP1++;
+                movesPlayer1.innerHTML = tokenP1;
+                textTurnP1Js.innerHTML= "";
+                textTurnP2Js.innerHTML= "Es tu turno";
+        
+            
+            winner=CheckWin();
+            SendWinner();    
+            turn = !turn;
+            inDelete = 10;
         }
-        // if ((cell.innerHTML === "") && (tokenP1>=3 && tokenP2>=3) && (turn) && (!inDelete)){
-        //     cell.innerHTML = "X";
-        //     cell.style.color = "rgb(13, 110, 253)";
-        //     tablePresent[cell.id] = "X";
-        //     console.log ("Ha entrado en el if pintar X azul");
-        //     tokenP1++;
-        //     movesPlayer1.innerHTML = tokenP1;
-        //     textTurnP1Js.innerHTML= "";
-        //     textTurnP2Js.innerHTML= "Es tu turno";
+    }
+
+
+        if ((cell.innerHTML === "O") && (cell.innerHTML !== "") && (tokenP1>=3 && tokenP2>=3) && (!turn) && (inDelete === 10)){
+            cell.innerHTML = "";
+            tablePresent[cell.id] = "";
+            inDelete = 5;
+            console.log ("indelete dentro del borrado : "+inDelete);
+        } else {
+            if ((cell.innerHTML !== "O") && (cell.innerHTML !== "X") && (tokenP1>=3 && tokenP2>=3) && (!turn) && (inDelete === 5) && (cell.innerHTML === "")){
+                cell.innerHTML = "O";
+                cell.style.color = "rgb(220, 53, 69)";
+                tablePresent[cell.id] = "O";
+                tokenP2++;
+                movesPlayer2.innerHTML = tokenP2;
+                textTurnP1Js.innerHTML= "Es tu turno";
+                textTurnP2Js.innerHTML= "";
         
-        //     winner=CheckWin();
-        //     SendWinner();    
-        //     turn = !turn;
-        // }
+            
 
-
-
-        
+                winner=CheckWin();
+                SendWinner();    
+                turn = !turn;
+                inDelete = 10;
+            }
+        }
+    
     })
 })
