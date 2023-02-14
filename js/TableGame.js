@@ -27,12 +27,13 @@ let textTurnP2Js = document.getElementById("textTurnP2Html");
 let datosSesion = JSON.parse(sessionStorage.getItem("playersInfo"));
 
 let turn = true;
+let inDelete = true;
 
 let tokenP1 = 0;
 let tokenP2 = 0;
 
 let winner;
-let inDelete = 10;
+
 
 // Funciones ********************************************************
 
@@ -88,8 +89,8 @@ textTurnP1Js.innerHTML= "Es tu turno";
 textTurnP2Js.innerHTML= "";
 movesPlayer1.innerHTML = 0;
 movesPlayer2.innerHTML = 0;
-console.log ("el primer indelete es "+inDelete);
 
+// Colocación de las primeras 6 fichas de los dos jugadores
 
 tableView.map (cell => {
     cell.addEventListener("click", () => {
@@ -119,47 +120,40 @@ tableView.map (cell => {
     })
 })
 
-console.log("InDelete es : "+inDelete);
-
 tableView.map (cell => {
     cell.addEventListener("click", () => {
-        console.log ("InDelete es "+inDelete);
-        console.log ("movimientos p1 "+tokenP1);
-        console.log ("movimientos p2 "+tokenP2);
-        console.log ("turno "+turn);
-        console.log ("celda "+cell.innerHTML);
-        if ((cell.innerHTML === "X") && (cell.innerHTML !== "") && (tokenP1>=3 && tokenP2>=3) && (turn) && (inDelete === 10)){
+
+        // Acción de quitar y poner las fichas del jugador 1
+
+        if ((cell.innerHTML === "X") && (cell.innerHTML !== "") && (tokenP1>=3 && tokenP2>=3) && (turn) && (inDelete)){
             cell.innerHTML = "";
             tablePresent[cell.id] = "";
-            inDelete = 5;
-            console.log ("indelete dentro del borrado : "+inDelete);
+            inDelete = !inDelete;
         } else {
-            if ((cell.innerHTML !== "O") && (cell.innerHTML !== "X") && (tokenP1>=3 && tokenP2>=3) && (turn) && (inDelete === 5) && (cell.innerHTML === "")){
+            if ((cell.innerHTML === "") && (tokenP1>=3 && tokenP2>=3) && (turn) && (!inDelete)){
                 cell.innerHTML = "X";
                 cell.style.color = "rgb(13, 110, 253)";
                 tablePresent[cell.id] = "X";
-                console.log ("Ha entrado en el if pintar X azul");
                 tokenP1++;
                 movesPlayer1.innerHTML = tokenP1;
                 textTurnP1Js.innerHTML= "";
                 textTurnP2Js.innerHTML= "Es tu turno";
         
-            
-            winner=CheckWin();
-            SendWinner();    
-            turn = !turn;
-            inDelete = 10;
+                winner=CheckWin();
+                SendWinner();    
+                turn = !turn;
+                inDelete = true;
+            }
         }
-    }
 
+        // Acción de quitar y poner las fichas del jugador 2
 
-        if ((cell.innerHTML === "O") && (cell.innerHTML !== "") && (tokenP1>=3 && tokenP2>=3) && (!turn) && (inDelete === 10)){
+        if ((cell.innerHTML === "O") && (cell.innerHTML !== "") && (tokenP1>=3 && tokenP2>=3) && (!turn) && (inDelete)){
             cell.innerHTML = "";
             tablePresent[cell.id] = "";
-            inDelete = 5;
-            console.log ("indelete dentro del borrado : "+inDelete);
+            inDelete = !inDelete;
         } else {
-            if ((cell.innerHTML !== "O") && (cell.innerHTML !== "X") && (tokenP1>=3 && tokenP2>=3) && (!turn) && (inDelete === 5) && (cell.innerHTML === "")){
+            if ((cell.innerHTML === "") && (tokenP1>=3 && tokenP2>=3) && (!turn) && (!inDelete)){
                 cell.innerHTML = "O";
                 cell.style.color = "rgb(220, 53, 69)";
                 tablePresent[cell.id] = "O";
@@ -168,14 +162,11 @@ tableView.map (cell => {
                 textTurnP1Js.innerHTML= "Es tu turno";
                 textTurnP2Js.innerHTML= "";
         
-            
-
                 winner=CheckWin();
                 SendWinner();    
                 turn = !turn;
-                inDelete = 10;
+                inDelete = true;
             }
         }
-    
     })
 })
