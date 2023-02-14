@@ -32,6 +32,7 @@ let tokenP1 = 0;
 let tokenP2 = 0;
 
 let winner;
+let inDelete = true;
 
 // Funciones ********************************************************
 
@@ -59,6 +60,26 @@ const Reset = () => {
     })
 }
 
+const SendWinner = () => {
+    if (winner === "X"){
+        sessionStorage.setItem("winnerSS", winner);
+        sessionStorage.setItem("winnerNameSS", player1.innerHTML);
+        sessionStorage.setItem("winnerMoveSS", movesPlayer1.innerHTML);
+        setTimeout(()=>{
+            window.open("../pages/WinGame.html","_self");
+            },500);
+    }
+    if (winner === "O"){
+        sessionStorage.setItem("winnerSS", winner);
+        sessionStorage.setItem("winnerNameSS", player2.innerHTML);
+        sessionStorage.setItem("winnerMoveSS", movesPlayer1.innerHTML);
+        setTimeout(()=>{
+            window.open("../pages/WinGame.html","_self");
+            },500);
+    }
+}
+
+
 // Algoritmo ********************************************************
 
 player1.innerHTML = `${datosSesion.player1}`;
@@ -67,6 +88,7 @@ textTurnP1Js.innerHTML= "Es tu turno";
 textTurnP2Js.innerHTML= "";
 movesPlayer1.innerHTML = 0;
 movesPlayer2.innerHTML = 0;
+
 
 tableView.map (cell => {
     cell.addEventListener("click", () => {
@@ -89,25 +111,45 @@ tableView.map (cell => {
                 textTurnP1Js.innerHTML= "Es tu turno";
                 textTurnP2Js.innerHTML= "";
             }
-            winner = CheckWin();
-            if (winner === "X"){
-                sessionStorage.setItem("winnerSS", winner);
-                sessionStorage.setItem("winnerNameSS", player1.innerHTML);
-                sessionStorage.setItem("winnerMoveSS", movesPlayer1.innerHTML);
-                setTimeout(()=>{
-                    window.open("../pages/WinGame.html","_self");
-                    },500);
-            }
-            if (winner === "O"){
-                sessionStorage.setItem("winnerSS", winner);
-                sessionStorage.setItem("winnerNameSS", player2.innerHTML);
-                sessionStorage.setItem("winnerMoveSS", movesPlayer1.innerHTML);
-                setTimeout(()=>{
-                    window.open("../pages/WinGame.html","_self");
-                    },500);
-            }
+            winner=CheckWin();
+            SendWinner();    
             turn = !turn;
         }
     })
 })
 
+console.log("InDelete es : "+inDelete);
+
+tableView.map (cell => {
+    cell.addEventListener("click", () => {
+        console.log ("InDelete es "+inDelete);
+        console.log ("movimientos p1 "+tokenP1);
+        console.log ("movimientos p2 "+tokenP2);
+        console.log ("turno "+turn);
+        console.log ("celda "+cell.innerHTML);
+        if ((cell.textContent === "X") && (cell.textContent !== "") && (tokenP1>=3 && tokenP2>=3) && (turn) && (inDelete)){
+            cell.innerHTML = "";
+            tablePresent[cell.id] = "";
+            inDelete = !inDelete;
+            console.log ("indelete dentro del borrado : "+inDelete);
+        }
+        // if ((cell.innerHTML === "") && (tokenP1>=3 && tokenP2>=3) && (turn) && (!inDelete)){
+        //     cell.innerHTML = "X";
+        //     cell.style.color = "rgb(13, 110, 253)";
+        //     tablePresent[cell.id] = "X";
+        //     console.log ("Ha entrado en el if pintar X azul");
+        //     tokenP1++;
+        //     movesPlayer1.innerHTML = tokenP1;
+        //     textTurnP1Js.innerHTML= "";
+        //     textTurnP2Js.innerHTML= "Es tu turno";
+        
+        //     winner=CheckWin();
+        //     SendWinner();    
+        //     turn = !turn;
+        // }
+
+
+
+        
+    })
+})
