@@ -13,11 +13,11 @@ body{
     background: rgba(0,0,0,0.7); 
 }
 .ContainerHome{
-    margin-top: 1em;
-    height: 50vh;
+    margin-top: 5em;
 }
-.a{
-background-color : rgb(104, 21, 21);   
+.sizeTitle{
+    font-size: 3em;
+    font-weight: bold;
 }
 .logoSize{
     display: flex;
@@ -31,12 +31,6 @@ background-color : rgb(104, 21, 21);
 }
 .PlayerSelect{
     height: 10vh;
-}
-.TitleHome{
-    font-size: 6em;
-}
-.sizeTitle{
-    font-size: 4em;
 }
 .containerPlayerSelect{
     width: 70vw;
@@ -70,15 +64,6 @@ background-color : rgb(104, 21, 21);
     cursor: pointer;
 }
 
-@media (max-width:500px){
-    .TitleHome{
-        font-size: 3em;
-    }
-    .sizeTitle{
-        font-size: 3em;
-    }
-}
-
 @media (min-width:500px){
     .containerPlayerSelect{
         width: 50vw;
@@ -100,6 +85,9 @@ background-color : rgb(104, 21, 21);
     }
     .imgSize{
         width: 35%;
+    }
+    .sizeTitle{
+        font-size: 4em;
     }
 }
 @media (min-width:992px){
@@ -123,6 +111,9 @@ background-color : rgb(104, 21, 21);
     .imgSize{
         width: 25%;
     }
+    .sizeTitle{
+        font-size: 5em;
+    }
 }
 @media (min-width:1300px){
     .containerPlayerSelect{
@@ -134,5 +125,8 @@ background-color : rgb(104, 21, 21);
     }
     .imgSize{
         width: 15%;
+    }
+    .sizeTitle{
+        font-size: 6em;
     }
 }
