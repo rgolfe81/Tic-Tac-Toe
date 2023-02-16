@@ -1,9 +1,13 @@
+// Entorno **********************************************
+
 let winner = document.getElementById("nameWinner");
 let movesWinner = document.getElementById("movesWinner");
 
 let winnerSessionSymbol = sessionStorage.getItem("winnerSS");
 let winnerSessionName = sessionStorage.getItem("winnerNameSS");
 let winnerSessionMove = sessionStorage.getItem("winnerMoveSS");
+
+// Algoritmo *******************************************
 
 if (winnerSessionSymbol === "X"){
     winner.innerHTML = winnerSessionName;

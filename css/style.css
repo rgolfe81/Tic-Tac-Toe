@@ -89,11 +89,17 @@ body{
     .sizeTitle{
         font-size: 4em;
     }
+    .sizeNamePlayer{
+        font-size: 1.5em;
+    }
+    .text-moves{
+        font-size: 1.5em;
+    }
 }
 @media (min-width:992px){
     .containerTableGame{
         width: 90vw;
-        margin-top: 4em;
+        margin-top: 2em;
     }
     .sizeBoxes{
         height: 6rem;
@@ -107,6 +113,15 @@ body{
     }
     .sizeNamePlayer{
         font-size: 2em;
+    }
+    .ledTurn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+        width: 70%;
+        height: 2.5em;
+        margin: 1em;
     }
     .imgSize{
         width: 25%;
@@ -126,9 +141,6 @@ body{
     .imgSize{
         width: 15%;
     }
-    /* .sizeTitle{
-        font-size: 6em;
-    } */
     .boxSelection{
         width: 25em;
     }

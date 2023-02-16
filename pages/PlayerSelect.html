@@ -15,6 +15,9 @@
 
 </head>
 <body>
+
+    <!-- Cabecera logo TIC TAC TOE -->
+
     <header  class="mt-3">
         <div class="d-flex justify-content-center">
             <div class="text-primary mx-2 sizeTitle">TIC</div>
@@ -22,6 +25,9 @@
             <div class="text-danger mx-2 sizeTitle">TOE</div>
         </div>
     </header>
+
+    <!-- Selección de jugadores -->
+
     <div class="col logoSize my-4">
         <img class="imgSize" src="../img/icon_game2.png" alt="Imagen Icono Juego">
     </div>
@@ -51,7 +57,24 @@
         </div>
     </div>
 
+    <!-- Modal de error -->
 
+    <div class="modal" id="modalError" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header bg-danger">
+              <h5 class="modal-title text-light">Error</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>No has introducido los nombres de los jugadores correctamente</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="ErrorClose()">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <script src="../js/TableGame.js"></script>
     <script src="../js/PlayerSelect.js"></script>
