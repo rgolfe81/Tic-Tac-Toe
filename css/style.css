@@ -33,8 +33,7 @@ body{
     height: 10vh;
 }
 .containerPlayerSelect{
-    width: 70vw;
-    margin-top: 15em;
+    width: 80vw;
 }
 .containerTableGame{
     width: 70vw;
@@ -43,6 +42,10 @@ body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2px;
+}
+.boxSelection{
+    padding: 0.5em;
+    height: 5.5em;
 }
 .ledTurn{
     width: 60%;
@@ -64,27 +67,24 @@ body{
     cursor: pointer;
 }
 
-@media (min-width:500px){
+@media (min-width:445px){
     .containerPlayerSelect{
-        width: 50vw;
+        display: flex;
+        justify-content: space-evenly;
     }
     .containerTableGame{
         width: 50vw;
     }
     .imgSize{
-        width: 45%;
+        width: 40%;
     }
 }
 @media (min-width:768px){
-    .containerPlayerSelect{
-        width: 30vw;
-
-    }
     .containerTableGame{
         width: 30vw;
     }
     .imgSize{
-        width: 35%;
+        width: 30%;
     }
     .sizeTitle{
         font-size: 4em;
@@ -114,11 +114,11 @@ body{
     .sizeTitle{
         font-size: 5em;
     }
+    .boxSelection{
+        width: 20em;
+    }
 }
 @media (min-width:1300px){
-    .containerPlayerSelect{
-        width: 20vw;
-    }
     .sizeBoxes{
         height: 8rem;
         font-size: 7rem;
@@ -126,7 +126,10 @@ body{
     .imgSize{
         width: 15%;
     }
-    .sizeTitle{
+    /* .sizeTitle{
         font-size: 6em;
+    } */
+    .boxSelection{
+        width: 25em;
     }
 }
