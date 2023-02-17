@@ -27,9 +27,16 @@
     </header>
 
     <!-- Selección de jugadores -->
-
-    <div class="col logoSize my-4">
-        <img class="imgSize" src="../img/icon_game2.png" alt="Imagen Icono Juego">
+    <div class="rowPlayer my-5 mx-auto">
+        <div class="imgPlayer">
+            <img class="" src="../img/Logo_Player1.png" alt="Imagen Icono Player2">
+        </div>
+        <div class="imgPlayer">
+            <img class="rounded" src="../img/icon_game2.png" alt="Imagen Icono Juego">
+        </div>
+        <div class="imgPlayer">
+            <img class="" src="../img/Logo_Player2.png" alt="Imagen Player2">
+        </div>
     </div>
     <div class="containerPlayerSelect mx-auto mt-3">
         <div class="transparent boxSelection rounded mt-2">
@@ -61,20 +68,20 @@
 
     <div class="modal" id="modalError" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header bg-danger">
-              <h5 class="modal-title text-light">Error</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content border border-2 border-dark">
+                <div class="modal-header bg-danger">
+                    <h5 class="modal-title text-light">Error</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-dark text-light">
+                    <p>No has introducido los nombres de los jugadores correctamente</p>
+                </div>
+                <div class="modal-footer bg-dark">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="ErrorClose()">Close</button>
+                </div>
             </div>
-            <div class="modal-body">
-              <p>No has introducido los nombres de los jugadores correctamente</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="ErrorClose()">Close</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
     <script src="../js/TableGame.js"></script>
     <script src="../js/PlayerSelect.js"></script>

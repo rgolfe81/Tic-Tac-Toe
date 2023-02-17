@@ -19,16 +19,6 @@ body{
     font-size: 3em;
     font-weight: bold;
 }
-.logoSize{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.imgSize{
-    width: 50%;
-    border-radius: 1em;
-    box-shadow: 0px 0px 5px 1px white;
-}
 .PlayerSelect{
     height: 10vh;
 }
@@ -66,6 +56,19 @@ body{
     color: white;
     cursor: pointer;
 }
+.rowPlayer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+}
+.imgPlayer{
+    display: flex;
+    align-content: center;
+    height: 6rem;
+    border-radius: 1em;
+}
 
 @media (min-width:445px){
     .containerPlayerSelect{
@@ -84,7 +87,7 @@ body{
         width: 30vw;
     }
     .imgSize{
-        width: 30%;
+        width: 60%;
     }
     .sizeTitle{
         font-size: 4em;
@@ -94,6 +97,12 @@ body{
     }
     .text-moves{
         font-size: 1.5em;
+    }
+    .rowPlayer{
+        gap: 5em;
+    }
+    .imgPlayer{
+        height: 25vh;
     }
 }
 @media (min-width:992px){
@@ -124,7 +133,7 @@ body{
         margin: 1em;
     }
     .imgSize{
-        width: 25%;
+        width: 60%;
     }
     .sizeTitle{
         font-size: 5em;
@@ -132,14 +141,14 @@ body{
     .boxSelection{
         width: 20em;
     }
+    .imgPlayer{
+        height: 30vh;
+    }
 }
 @media (min-width:1300px){
     .sizeBoxes{
         height: 8rem;
         font-size: 7rem;
-    }
-    .imgSize{
-        width: 15%;
     }
     .boxSelection{
         width: 25em;
