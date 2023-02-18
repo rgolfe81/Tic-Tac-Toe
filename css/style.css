@@ -69,6 +69,19 @@ body{
     height: 6rem;
     border-radius: 1em;
 }
+.imgPlayerTableGame{
+    visibility: hidden;
+    display: none;
+    height: 8rem;
+}
+.imgWin{
+    height: 4em;
+}
+.marginWinner{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
 
 @media (min-width:445px){
     .containerPlayerSelect{
@@ -104,6 +117,10 @@ body{
     .imgPlayer{
         height: 25vh;
     }
+    .marginWinner{
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+    }
 }
 @media (min-width:992px){
     .containerTableGame{
@@ -129,8 +146,8 @@ body{
         align-items: center;
         font-size: 1.5em;
         width: 70%;
-        height: 2.5em;
-        margin: 1em;
+        height: 2em;
+        margin: 0.5em;
     }
     .imgSize{
         width: 60%;
@@ -144,6 +161,15 @@ body{
     .imgPlayer{
         height: 30vh;
     }
+    .imgPlayerTableGame{
+        visibility: visible;
+        display: block;
+        height: 8rem;
+    }
+    .marginWinner{
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
 }
 @media (min-width:1300px){
     .sizeBoxes{
@@ -152,5 +178,9 @@ body{
     }
     .boxSelection{
         width: 25em;
+    }
+    .marginWinner{
+        margin-top: 2em;
+        margin-bottom: 2em;
     }
 }
