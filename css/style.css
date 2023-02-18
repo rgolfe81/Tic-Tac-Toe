@@ -79,10 +79,18 @@ body{
 }
 .marginWinner{
     margin-top: 2em;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
+}
+.textFooter{
+    font-size: 0.4em;
+    margin-top: 3em;
 }
 
-
+@media (min-width:375px){
+    .textFooter{
+        margin-top: 10em;
+    }
+}
 @media (min-width:445px){
     .containerPlayerSelect{
         display: flex;
@@ -118,8 +126,11 @@ body{
         height: 25vh;
     }
     .marginWinner{
-        margin-top: 1.5em;
-        margin-bottom: 1.5em;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+    .textFooter{
+        margin-top: 4em;
     }
 }
 @media (min-width:992px){
@@ -167,8 +178,11 @@ body{
         height: 8rem;
     }
     .marginWinner{
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .textFooter{
+        margin-top: 2.5em;
     }
 }
 @media (min-width:1300px){
@@ -180,7 +194,14 @@ body{
         width: 25em;
     }
     .marginWinner{
-        margin-top: 2em;
-        margin-bottom: 2em;
+        margin-top: 3em;
+        margin-bottom: 3em;
+    }
+    .imgWin{
+        height: 6em;
+    }
+    .textFooter{
+        font-size: 0.9em;
+        margin-top: 4em;
     }
 }
