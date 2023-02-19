@@ -1,5 +1,5 @@
-# <img src="img/icon_game2.png" width="35"> JUEGO TIC-TAC-TOE 
-<hr>
+# <img src="img/icon_game2.png" width="35"> JUEGO TIC-TAC-TOE
+
 ## Descripción del proyecto
 El proyecto consiste en replicar el juego Tic-Tac-Toe. Donde dos jugadores podrán enfrentarse en una partida con tres fichas, en la que tendrán que conseguir colocar sus tres fichas en linea antes que el contrario.
 El juego dispone de cuatro vistas:
